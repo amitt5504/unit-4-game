@@ -1,5 +1,4 @@
 body {
-    /* background-repeat: no-repeat; */
     background-position: fixed;
 }
 
@@ -14,17 +13,23 @@ h1 {
 
 }
 
-/* #infinity-stones {
-    margin-left: 150px;
-    
-} */
-
-.stone {
+#infinity-stones { 
     margin-left: 20px;
-    /* width: fit-content; */
+    width: fit-content;  
+} 
+
+#mind-stone {
+    margin-left: 5px;
+    align-content: center;
+}
+.stones {
+    margin-right: 20px;
+}
+
+#test {
+    padding-left: 15px;
 }
 
 #result-image {
-    /* width: fit-content; */
     max-width: 100%;
 }

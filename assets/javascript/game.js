@@ -22,7 +22,7 @@ $(document).ready(function () {
 
         // First each crystal will be given the class ".crystal-image".
         // This will allow the CSS to take effect.
-        imageStone.addClass("stone");
+        imageStone.addClass("stones");
 
         // Each imageCrystal will be given a src link to the crystal image
         imageStone.attr("src", stoneArray[i]);
@@ -30,8 +30,8 @@ $(document).ready(function () {
         // Each imageCrystal will be given a data attribute called data-crystalValue.
         // This data attribute will be set equal to the array value.
         imageStone.attr("data-stoneValue", Math.floor(Math.random() * 12) + 1);
-        imageStone.attr("height", "150px");
-        imageStone.attr("width", "150px");
+        imageStone.attr("height", "125px");
+        imageStone.attr("width", "125px");
 
 
         // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
@@ -49,7 +49,7 @@ $(document).ready(function () {
 
     updateStats();
 
-    $(".stone").on("click", function () {
+    $(".stone, .stones").on("click", function () {
 
         // Determining the crystal's value requires us to extract the value from the data attribute.
         // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
