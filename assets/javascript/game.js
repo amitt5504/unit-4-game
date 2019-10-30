@@ -1,27 +1,28 @@
 var wins = 0;
 var losses = 0;
+var gameOver = false;
 
 $(document).ready(function () {
     var targetNumber = Math.floor(Math.random() * 100) + 19;
     var userScore = 0;
 
     
-    var stoneArray = ["https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/f/f0/Time_Stone_VFX.png/revision/latest?cb=20190427012724",
+    var stoneArray = ["https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/1/17/Soul_Stone_VFX.png/revision/latest?cb=20190427012633",
+    "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/9/9b/Reality_Stone_VFX.png/revision/latest?cb=20190427012609",
         "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/0/0a/Space_Stone_VFX.png/revision/latest?cb=20190427012702",
-        "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/e/e4/Mind_Stone_VFX.png/revision/latest?cb=20190427012504",
-        "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/9/9b/Reality_Stone_VFX.png/revision/latest?cb=20190427012609",
         "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/d/d7/Power_Stone_VFX.png/revision/latest?cb=20190427012543",
-        "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/1/17/Soul_Stone_VFX.png/revision/latest?cb=20190427012633"
+        "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/f/f0/Time_Stone_VFX.png/revision/latest?cb=20190427012724",
+        "https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/e/e4/Mind_Stone_VFX.png/revision/latest?cb=20190427012504"
     ];
 
-    for (var i = 0; i < stoneArray.length; i++) {
+    for (var i = 0; i < stoneArray.length -1; i++) {
 
         // For each iteration, we will create an imageCrystal
         var imageStone = $("<img>");
 
         // First each crystal will be given the class ".crystal-image".
         // This will allow the CSS to take effect.
-        imageStone.addClass("infinity-stone");
+        imageStone.addClass("stone");
 
         // Each imageCrystal will be given a src link to the crystal image
         imageStone.attr("src", stoneArray[i]);
@@ -37,9 +38,18 @@ $(document).ready(function () {
         $("#infinity-stones").append(imageStone);
     }
 
+    var mindStone = $("<img>");
+    mindStone.addClass("stone");
+    mindStone.attr("src", stoneArray[5]);
+    mindStone.attr("data-stoneValue", Math.floor(Math.random() * 12) + 1);
+    mindStone.attr("height", "150px");
+    mindStone.attr("width", "150px");
+    $("#mind-stone").append(mindStone);
+
+
     updateStats();
 
-    $(".infinity-stone").on("click", function () {
+    $(".stone").on("click", function () {
 
         // Determining the crystal's value requires us to extract the value from the data attribute.
         // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
@@ -79,14 +89,22 @@ $(document).ready(function () {
         userScore = 0;
         targetNumber = Math.floor(Math.random() * 100) + 19;
         updateStats();
+        
     }
 
-    function displayWin() {
-       
+    function displayWin() {        
+        $("#result-image").attr("src", "https://media.giphy.com/media/l3OAyWrV5CIjyiedmF/giphy.gif");
+        $("#result-image").attr("height", "250px");
         $('#result').text("You Win!!");
+
+
     }
 
     function displayLoss() {
+        $("#result-image").attr("src", "https://media.giphy.com/media/ie76dJeem4xBDcf83e/giphy.gif");
+        $("#result-image").attr("height", "250px");
+       
         $('#result').text("You Lose!!");
+        
     }
 });

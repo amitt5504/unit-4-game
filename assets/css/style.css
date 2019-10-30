@@ -1,0 +1,30 @@
+body {
+    /* background-repeat: no-repeat; */
+    background-position: fixed;
+}
+
+h1 {
+    padding-top: 10px;
+    margin: auto;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+/* #infinity-stones {
+    margin-left: 150px;
+    
+} */
+
+.stone {
+    margin-left: 20px;
+    /* width: fit-content; */
+}
+
+#result-image {
+    /* width: fit-content; */
+    max-width: 100%;
+}
