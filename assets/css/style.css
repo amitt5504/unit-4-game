@@ -1,7 +1,9 @@
+/* Keeps the background image fixed */
 body {
     background-position: fixed;
 }
 
+/* Styling of the text */
 h1 {
     padding-top: 10px;
     margin: auto;
